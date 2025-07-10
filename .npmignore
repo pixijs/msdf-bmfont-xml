@@ -6,4 +6,6 @@ test/
 .npmignore
 assets/
 *.png
-
+jsconfig.json
+CHANGELOG.md
+.github

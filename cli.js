@@ -5,15 +5,13 @@ const generateBMFont = require('./index');
 const fs = require('fs');
 const path = require('path');
 const handlebars = require('handlebars');
-const args = require('commander');
-const updateNotifier = require('update-notifier');
+const commander = require('commander');
 const utils = require('./lib/utils');
 const logger = generateBMFont.defaultLogger;
-updateNotifier({pkg}).notify();
 
 let fontFile;
-args
-  .version('msdf-bmfont-xml v' + pkg.version)
+const args = new commander.Command();
+  args.version('msdf-bmfont-xml v' + pkg.version)
   .usage('[options] <font-file>')
   .arguments('<font_file>')
   .description('Creates a BMFont compatible bitmap font of signed distance fields from a font file')
@@ -29,11 +27,11 @@ args
   .option('-d, --round-decimal <digit>', 'rounded digits of the output font file.', 0)
   .option('-v, --vector', 'generate svg vector file for debuging', false)
   .option('-u, --reuse [file.cfg]', 'save/create config file for reusing settings', false)
-  .option('    --smart-size', 'shrink atlas to the smallest possible square', true)
-  .option('    --pot', 'atlas size shall be power of 2', false)
-  .option('    --square', 'atlas size shall be square', false)
-  .option('    --rot', 'allow 90-degree rotation while packing', false)
-  .option('    --rtl', 'use RTL(Arabic/Persian) charactors fix', false)
+  .option('--smart-size', 'shrink atlas to the smallest possible square', true)
+  .option('--pot', 'atlas size shall be power of 2', false)
+  .option('--square', 'atlas size shall be square', false)
+  .option('--rot', 'allow 90-degree rotation while packing', false)
+  .option('--rtl', 'use RTL(Arabic/Persian) charactors fix', false)
   .action(function(file){
     fontFile = fileExistValidate(file);
   }).parse(process.argv);

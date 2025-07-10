@@ -1,14 +1,10 @@
 # msdf-bmfont-xml
 
-[![Build Status](https://travis-ci.org/soimy/msdf-bmfont-xml.svg?branch=master)](https://travis-ci.org/soimy/msdf-bmfont-xml)
-[![npm version](https://badge.fury.io/js/msdf-bmfont-xml.svg)](https://badge.fury.io/js/msdf-bmfont-xml)
-![npm](https://img.shields.io/npm/dm/msdf-bmfont-xml.svg)
-
 Converts a `.ttf` font file into multichannel signed distance fields, then outputs packed spritesheets and an `xml(.fnt}` / `txt(.fnt)` or `json` representation of an AngelCode BMFont file.
 
 Signed distance fields are a method of reproducing vector shapes from a texture representation, popularized in [this paper by Valve](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf).
 This tool uses [Chlumsky/msdfgen](https://github.com/Chlumsky/msdfgen) to generate multichannel signed distance fields to preserve corners. The distance fields are created from vector fonts, then rendered into texture pages. A BMFont object is provided for character layout. (See: [BMFont format](http://www.angelcode.com/products/bmfont/doc/file_format.html))
-![Preview image](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/msdf-bmfont-xml.png)
+![Preview image](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/msdf-bmfont-xml.png)
 
 ## Run script to see MSDF font in browser using pixi.js
 
@@ -25,7 +21,7 @@ npm install msdf-bmfont-xml -g
 Then you just need to call `msdf-bmfont` from console to generate font file.
 Type in `msdf-bmfont --help` for more detail usage.
 
-![Console-Demo](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/console-demo.gif)
+![Console-Demo](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/console-demo.gif)
 
 ### Usage
 
@@ -67,7 +63,7 @@ msdf-bmfont --reuse -o path/to/atlas.png -m 512,256 -s 42 -r 3 -p 1 -t msdf path
 
 We will get three file: `atlas.0.png` `atlas.0.cfg` & `font.fnt` and this is the generated atlas in the minimum pot size (256x256):
 
-![Atlas0](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/atlas.0.png)
+![Atlas0](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/atlas.0.png)
 
 Then we want to use the old setting except a different font and use monochrome signed distance field atlas, and output an extra `.svg` version of atlas:
 
@@ -77,15 +73,15 @@ msdf-bmfont -v -u path/to/atlas.0.cfg -t sdf -p 0 -r 8 path/to/anotherfont.ttf
 
 This time we get a modified `atlas.0.png` with new bitmap font appended:
 
-![Atlas1](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/atlas.1.jpg)
+![Atlas1](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/atlas.1.jpg)
 
 Not satisfied with the style? Remember we got a `svg` atlas!
 
-![svg](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/svg.png)
+![svg](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/svg.png)
 
 How about fire up some graphic editor and add some neat effect and lay on the output atlas?
 
-![final](https://raw.githubusercontent.com/soimy/msdf-bmfont-xml/master/assets/atlas.2.jpg)
+![final](https://raw.githubusercontent.com/pixijs/msdf-bmfont-xml/master/assets/atlas.2.jpg)
 
 ## Install as Module
 

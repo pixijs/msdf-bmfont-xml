@@ -1,5 +1,5 @@
 {
-  "name": "msdf-bmfont-xml",
+  "name": "@pixi/msdf-bmfont-xml",
   "version": "2.7.0",
   "description": "Creates a BMFont compatible bitmap font of Signed-Distance Fields from a font file",
   "main": "index.js",
@@ -11,8 +11,7 @@
     "test:rtl": "cd test/assets/fonts && node ../../../cli.js -f xml -o Iransans -i ../../../assets/charset/charset.persian.txt -v -u -m 512,256 -t msdf -s 42 -r 4 -p 2 --smart-size --pot ../../../assets/fonts/Iransans.ttf",
     "test:save": "cd test/assets/fonts && node ../../../cli.js -o DIN_CB -u -m 512,256 --smart-size --pot ../../../assets/fonts/DIN_CB.ttf",
     "test:reuse": "cd test/assets/fonts && node --inspect-brk=9229 ../../../cli.js -u DIN_CB.cfg ../../../assets/fonts/FiraSansMedium.woff",
-    "render": "npm run test:disk && node test/test.js",
-    "version": "standard-version"
+    "render": "npm run test:disk && node test/test.js"
   },
   "bin": {
     "msdf-bmfont": "./cli.js"
@@ -39,41 +38,30 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/soimy/msdf-bmfont-xml.git"
+    "url": "git://github.com/pixijs/msdf-bmfont-xml.git"
   },
-  "homepage": "https://github.com/soimy/msdf-bmfont-xml",
+  "homepage": "https://github.com/pixijs/msdf-bmfont-xml",
   "bugs": {
-    "url": "https://github.com/soimy/msdf-bmfont-xml/issues"
+    "url": "https://github.com/pixijs/msdf-bmfont-xml/issues"
   },
   "license": "MIT",
   "dependencies": {
     "arabic-persian-reshaper": "^1.0.1",
     "cli-progress": "^3.12.0",
-    "commander": "^2.20.3",
+    "commander": "^14.0.0",
     "handlebars": "^4.7.7",
     "is-invalid-path": "^1.0.2",
-    "jimp": "^0.3.11",
-    "js2xmlparser": "^4.0.2",
+    "jimp": "^1.6.0",
+    "js2xmlparser": "^5.0.0",
     "map-limit": "0.0.1",
     "maxrects-packer": "^2.7.3",
-    "opentype.js": "^0.11.0",
-    "update-notifier": "^5.1.0"
+    "opentype.js": "^0.11.0"
   },
   "devDependencies": {
-    "cz-conventional-changelog": "^2.1.0",
-    "load-bmfont": "^1.4.1",
-    "open": "^6.4.0",
-    "rimraf": "^2.7.1",
+    "open": "^10.1.2",
+    "rimraf": "^6.0.1",
     "run-parallel": "^1.2.0",
-    "serve-handler": "^6.1.5",
-    "standard-version": "^9.5.0",
-    "tslint": "^5.20.1",
-    "typescript": "^3.9.10",
-    "xml2js": "^0.4.23"
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "serve-handler": "^6.1.6",
+    "typescript": "^3.9.10"
   }
 }
